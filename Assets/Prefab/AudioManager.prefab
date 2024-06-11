@@ -1,0 +1,66 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &3191708942515836952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3073685573201668357}
+  - component: {fileID: 1153482417158814949}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3073685573201668357
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191708942515836952}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.12395756, y: 1.116579, z: -0.010463299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1153482417158814949
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3191708942515836952}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b4310e9a3ebead4097d3f3605bd896c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sounds:
+  - {fileID: 8300000, guid: ea55f2d8e6b979645bd4539e00f155ad, type: 3}
+  - {fileID: 8300000, guid: 26f5eea7a9554b34cbabced706b9ec4a, type: 3}
+  - {fileID: 8300000, guid: b0b1f1bb058774a4dab28d3e100e5a7c, type: 3}
+  - {fileID: 8300000, guid: 0ca68351477e9a24b81a2ca2de8ca8b8, type: 3}
+  - {fileID: 8300000, guid: 9d4b901bd01d9b441a450f84032a5b2d, type: 3}
+  soundNames:
+  - Hit
+  - Collect
+  - Die
+  - Passed
+  - Loose
+  musicTracks:
+  - {fileID: 8300000, guid: 8fff40f80526c624292e03a8fd8d7884, type: 3}
+  - {fileID: 8300000, guid: 44a851f2f0ec185438e172fb6b055d89, type: 3}
+  - {fileID: 8300000, guid: 2ac2a618e7b7e404c8c1e858ec87f0d9, type: 3}
+  musicNames:
+  - Danger
+  - Romantic
+  - Game
