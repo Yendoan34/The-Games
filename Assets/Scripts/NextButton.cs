@@ -15,7 +15,7 @@ public class NextButton : MonoBehaviour
     public void OnNextButtonClick()
     {
         // If there are objects left to toggle
-        if (currentIndex < objectsToToggle.Length - 1)
+        if (currentIndex < objectsToToggle.Length-1)
         {
             // Disable the current object
             objectsToToggle[currentIndex].SetActive(false);
@@ -45,6 +45,6 @@ public class NextButton : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadSceneAsync(4);
+        SceneManager.LoadScene(2);
     }
 }
