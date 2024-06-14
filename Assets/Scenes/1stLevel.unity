@@ -3141,7 +3141,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d2c5ed8cafbb24644bea22548b0fe9ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 2259878113031793527}
   spawnRate: 2
   maxEnemies: 4
   passedPanel: {fileID: 1949383106}
