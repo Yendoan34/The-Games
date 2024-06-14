@@ -34,7 +34,7 @@ public class NextButton1 : MonoBehaviour
             }
             else
             {
-                fairy.SetTrigger("Fairy Talk");
+                fairy.SetTrigger("Dark Fairy Talk");
             }
         }
         else
