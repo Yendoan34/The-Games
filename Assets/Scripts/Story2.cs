@@ -28,7 +28,7 @@ public class Story2 : MonoBehaviour
         yield return new WaitForSeconds(1.5f);
         thunders1.SetActive(true);
         fairyObject.SetActive(true);
-        fairy.SetTrigger("Fairy Move");
+        fairy.SetTrigger("Dark Fairy Move");
         yield return new WaitForSeconds(1.5f);
         thunders1.SetActive(false);
         thunders2.SetActive(true);
