@@ -6,7 +6,7 @@ public class Player : MonoBehaviour
     public GameObject gun;
     public GameObject[] projectiles; // Array to hold different projectiles
     public Transform shootPoint;
-    public Transform target;
+    public Transform[] target;
     private int currentProjectile = 0; // Index to keep track of current projectile type
     private Animator animator; // Reference to the Animator component
 
@@ -16,15 +16,19 @@ public class Player : MonoBehaviour
     }
     public void Shoot()
     {
-        // Trigger the shooting animation
-        animator.SetTrigger("Shoot");
-        gun.SetActive(true);
+        for (int i = 0; i < target.Length; i++)
+        {
+            // Trigger the shooting animation
+            animator.SetTrigger("Shoot");
+            gun.SetActive(true);
 
-        // Instantiate the projectile at the shoot point
-        GameObject projectile = Instantiate(projectiles[currentProjectile], shootPoint.position, Quaternion.identity);
+            // Instantiate the projectile at the shoot point
+            GameObject projectile = Instantiate(projectiles[currentProjectile], shootPoint.position, Quaternion.identity);
 
-        // Start the coroutine to move the projectile to the target position
-        StartCoroutine(MoveProjectile(projectile, target.position));
+            // Start the coroutine to move the projectile to the target position
+            StartCoroutine(MoveProjectile(projectile, target[i].position));
+        }
+        
     }
     private IEnumerator MoveProjectile(GameObject projectile, Vector3 targetPosition)
     {

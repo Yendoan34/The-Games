@@ -1065,7 +1065,23 @@ MonoBehaviour:
   - {fileID: 5577372275933560399, guid: d15cd12f7ed61984e9a5b54e14822dfc, type: 3}
   - {fileID: 5577372275933560399, guid: bb8f738dfdd823c4e856a36f0e9ea359, type: 3}
   shootPoint: {fileID: 1992671094}
-  target: {fileID: 921866504}
+  target:
+  - {fileID: 921866504}
+  - {fileID: 1718224287}
+  - {fileID: 1409873147}
+  - {fileID: 781932223}
+  - {fileID: 2019257887}
+  - {fileID: 1699316579}
+  - {fileID: 1175925882}
+  - {fileID: 582034795}
+  - {fileID: 1287268012}
+  - {fileID: 1864997532}
+  - {fileID: 922375939}
+  - {fileID: 802695098}
+  - {fileID: 89245555}
+  - {fileID: 796579557}
+  - {fileID: 1306365143}
+  - {fileID: 550117612}
 --- !u!1 &184231651
 GameObject:
   m_ObjectHideFlags: 0
