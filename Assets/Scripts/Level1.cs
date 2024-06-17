@@ -2,7 +2,8 @@ using UnityEngine;
 
 public class Level1 : MonoBehaviour
 {
-    public GameObject fairy; // Prefab of the fairy to spawn
+    public GameObject fairy; // The fairy to spawn
+    public GameObject teddy; // The teddy to spawn
     public float spawnRate = 2f; // Rate at which enemies will spawn
     public int maxEnemies = 4; // Maximum number of enemies to spawn
     public GameObject passedPanel;
@@ -14,6 +15,7 @@ public class Level1 : MonoBehaviour
         enemies = new GameObject[maxEnemies]; // Initialize the array
         // Start spawning enemies
         InvokeRepeating("SpawnFairy", 2f, spawnRate);
+        InvokeRepeating("SpawnTeddy", 5f, spawnRate);
     }
     void Update()
     {
@@ -31,6 +33,7 @@ public class Level1 : MonoBehaviour
         {
             // Spawn enemy at the position of the spawn point
             GameObject newEnemy = Instantiate(fairy, transform.position, Quaternion.identity);
+            newEnemy.SetActive(true); // Ensure the spawned enemy is enabled
             enemies[enemiesSpawned] = newEnemy; // Add the spawned enemy to the array
             enemiesSpawned++;
         }
@@ -39,6 +42,23 @@ public class Level1 : MonoBehaviour
             stop = true;
             // Stop spawning when the limit is reached
             CancelInvoke("SpawnFairy");
+        }
+    }
+    void SpawnTeddy()
+    {
+        if (enemiesSpawned < maxEnemies)
+        {
+            // Spawn enemy at the position of the spawn point
+            GameObject newEnemy = Instantiate(teddy, transform.position, Quaternion.identity);
+            newEnemy.SetActive(true); // Ensure the spawned enemy is enabled
+            enemies[enemiesSpawned] = newEnemy; // Add the spawned enemy to the array
+            enemiesSpawned++;
+        }
+        else
+        {
+            stop = true;
+            // Stop spawning when the limit is reached
+            CancelInvoke("SpawnTeddy");
         }
     }
     // Function to count alive enemies
