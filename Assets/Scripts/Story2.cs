@@ -27,15 +27,18 @@ public class Story2 : MonoBehaviour
     {
         yield return new WaitForSeconds(1.5f);
         thunders1.SetActive(true);
+        AudioManager.instance.PlaySound("Thunder");
         fairyObject.SetActive(true);
         fairy.SetTrigger("Dark Fairy Move");
         yield return new WaitForSeconds(1.5f);
         thunders1.SetActive(false);
         thunders2.SetActive(true);
+        AudioManager.instance.PlaySound("Thunder");
         teddyObject.SetActive(true);
         teddy.SetTrigger("Teddy Move");
         yield return new WaitForSeconds(1.5f);
         thunders2.SetActive(false);
         thunders3.SetActive(true);
+        AudioManager.instance.PlaySound("Thunder");
     }
 }

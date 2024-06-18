@@ -58,6 +58,7 @@ public class Player : MonoBehaviour
 
     private void ShootAtTarget(Transform target)
     {
+        AudioManager.instance.PlaySound("Shoot");
         // Trigger the shooting animation
         animator.SetTrigger("Shoot");
         gun.SetActive(true);

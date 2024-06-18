@@ -50,12 +50,18 @@ MonoBehaviour:
   - {fileID: 8300000, guid: b0b1f1bb058774a4dab28d3e100e5a7c, type: 3}
   - {fileID: 8300000, guid: 0ca68351477e9a24b81a2ca2de8ca8b8, type: 3}
   - {fileID: 8300000, guid: 9d4b901bd01d9b441a450f84032a5b2d, type: 3}
+  - {fileID: 8300000, guid: 1eb4c5b3e83df514e9f4f409ba4ac665, type: 3}
+  - {fileID: 8300000, guid: 5b034477ca51c9145bf5ac1196d09b62, type: 3}
+  - {fileID: 8300000, guid: 6ab8b735dc1d12e439fce56ccf154261, type: 3}
   soundNames:
   - Hit
   - Collect
   - Die
   - Passed
   - Loose
+  - Shoot
+  - Click
+  - Thunder
   musicTracks:
   - {fileID: 8300000, guid: 8fff40f80526c624292e03a8fd8d7884, type: 3}
   - {fileID: 8300000, guid: 44a851f2f0ec185438e172fb6b055d89, type: 3}
