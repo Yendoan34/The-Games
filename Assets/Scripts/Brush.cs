@@ -20,8 +20,6 @@ public class Brush : MonoBehaviour
     {
         if (fireCountdown <= 0f)
         {
-            
-
             // Start the coroutine to move the projectile to the target position
             StartCoroutine(MoveProjectile());
             fireCountdown = 1f / fireRate;
