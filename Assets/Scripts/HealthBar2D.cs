@@ -4,7 +4,7 @@ public class HealthBar2D : MonoBehaviour
 {
     public Transform fill;  // The fill transform
     public Transform background;  // The background transform
-    public Enemy enemy;  // Reference to the Enemy script
+    public EnemyHealth enemy;  // Reference to the Enemy script
 
     private Vector3 initialFillScale;
 

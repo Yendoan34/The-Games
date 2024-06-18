@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 897242722662325818}
   - component: {fileID: 4321824390140164317}
   m_Layer: 0
-  m_Name: Bullet 3
+  m_Name: HairRoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
