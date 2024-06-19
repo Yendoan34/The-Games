@@ -22,6 +22,7 @@ public class HairDryer : MonoBehaviour
         if (hit.collider != null)
         {
             rb = hit.collider.GetComponent<Rigidbody2D>();
+            Debug.Log(rb.velocity);
             rb.AddForce(transform.right * thrust, ForceMode2D.Impulse);
             timer += Time.deltaTime;
             Debug.Log(timer);

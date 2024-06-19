@@ -4,12 +4,14 @@ public class Level1 : MonoBehaviour
 {
     public GameObject fairy; // The fairy to spawn
     public GameObject teddy; // The teddy to spawn
-    public float spawnRate = 2f; // Rate at which enemies will spawn
-    public int maxEnemies = 4; // Maximum number of enemies to spawn
+    public float spawnRate = 4f; // Rate at which enemies will spawn
+    public int maxEnemies = 8; // Maximum number of enemies to spawn
     public GameObject passedPanel;
     private bool stop = false;
     private GameObject[] enemies;
     private int enemiesSpawned = 0; // Counter for the number of spawned enemies
+    private int fairySpawned = 0; // Counter for the number of spawned enemies
+    private int teddySpawned = 0; // Counter for the number of spawned enemies
     void Start()
     {
         enemies = new GameObject[maxEnemies]; // Initialize the array
@@ -29,30 +31,31 @@ public class Level1 : MonoBehaviour
     }
     void SpawnFairy()
     {
-        if (enemiesSpawned < maxEnemies)
+        if (fairySpawned < (maxEnemies/2 + 1) && enemiesSpawned < maxEnemies)
         {
             // Spawn enemy at the position of the spawn point
             GameObject newEnemy = Instantiate(fairy, transform.position, Quaternion.identity);
             newEnemy.SetActive(true); // Ensure the spawned enemy is enabled
             enemies[enemiesSpawned] = newEnemy; // Add the spawned enemy to the array
             enemiesSpawned++;
+            fairySpawned++;
         }
         else
         {
-            stop = true;
             // Stop spawning when the limit is reached
             CancelInvoke("SpawnFairy");
         }
     }
     void SpawnTeddy()
     {
-        if (enemiesSpawned < maxEnemies)
+        if (teddySpawned < (maxEnemies/2 + 1) && enemiesSpawned < maxEnemies)
         {
             // Spawn enemy at the position of the spawn point
             GameObject newEnemy = Instantiate(teddy, transform.position, Quaternion.identity);
             newEnemy.SetActive(true); // Ensure the spawned enemy is enabled
             enemies[enemiesSpawned] = newEnemy; // Add the spawned enemy to the array
             enemiesSpawned++;
+            teddySpawned++;
         }
         else
         {
@@ -72,6 +75,7 @@ public class Level1 : MonoBehaviour
                 count++;
             }
         }
+        Debug.Log(count);
         return count;
     }
 }

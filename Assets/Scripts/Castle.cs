@@ -16,7 +16,7 @@ public class Castle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies == 4)
+        if (enemies == 8)
         {
             barbie.SetActive(false);
             fail.SetActive(true);
