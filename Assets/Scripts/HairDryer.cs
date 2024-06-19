@@ -4,30 +4,32 @@ using UnityEngine;
 
 public class HairDryer : MonoBehaviour
 {
-    public float range = 100.0f;              // kuinka pitk‰lle ampunin voi tapahtua
-    public float damage = 25.0f;              // kuinka paljon damagea tehd‰‰n
-    public LayerMask enemyLayer;           // Mihin layeriin pyssy voi vaikuttaa
+    public LayerMask enemyLayer;
     public float rayDistance = 10f; // Set the distance for the raycast
+    private Rigidbody2D rb;
+    private float thrust = 0.005f;
+    private float timer = 0.0f;
     // Start is called before the first frame update
     void Start()
     {
         
     }
-
     // Update is called once per frame
     void Update()
     {
         // Perform the raycast
-        RaycastHit2D[] hits = Physics2D.RaycastAll(transform.position, Vector2.right, rayDistance, enemyLayer);
-
-        // Iterate through the hits and find the first valid hit
-        foreach (RaycastHit2D hit in hits)
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, enemyLayer);
+        if (hit.collider != null)
         {
-            // Ignore the self-collider
-            if (hit.collider != null)
-            {
-                Debug.Log(hit.collider.name);
-            }
+            rb = hit.collider.GetComponent<Rigidbody2D>();
+            rb.AddForce(transform.right * thrust, ForceMode2D.Impulse);
+            timer += Time.deltaTime;
+            Debug.Log(timer);
+        }
+        if (timer >= 4f)
+        {
+            rb.velocity = new Vector2(0.0f, 0.0f);
+            rb.angularVelocity = 0f;
         }
     }
 }

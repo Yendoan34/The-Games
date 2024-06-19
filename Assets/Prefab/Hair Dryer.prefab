@@ -161,8 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2c85beddbe14bcd4a89d86ed369c5adc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 100
-  damage: 25
   enemyLayer:
     serializedVersion: 2
     m_Bits: 8
+  rayDistance: 10
