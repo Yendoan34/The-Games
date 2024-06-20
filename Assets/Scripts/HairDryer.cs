@@ -23,6 +23,7 @@ public class HairDryer : MonoBehaviour
         {
             rb = hit.collider.GetComponent<Rigidbody2D>();
             Debug.Log(rb.velocity);
+            AudioManager.instance.PlaySound("Hair Dryer");
             rb.AddForce(transform.right * thrust, ForceMode2D.Impulse);
             timer += Time.deltaTime;
             Debug.Log(timer);
@@ -31,6 +32,14 @@ public class HairDryer : MonoBehaviour
         {
             rb.velocity = new Vector2(0.0f, 0.0f);
             rb.angularVelocity = 0f;
+            StartCoroutine(DestroyAfterDelay()); // Destroy the game object
+
         }
     }
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(0.5f); // Adjust the delay as needed
+        Destroy(gameObject); // Destroy the game object
+    }
+
 }

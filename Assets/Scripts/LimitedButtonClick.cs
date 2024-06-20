@@ -14,7 +14,7 @@ public class LimitedButtonClick : MonoBehaviour
     void Start()
     {
         time = maxClicks - clickCount;
-        timeText = GameObject.Find("TimeText").GetComponent<TextMeshProUGUI>();
+        timeText = gameObject.GetComponentInChildren<TextMeshProUGUI>();
         timeText.text = $"{time}";
         button = GetComponent<Button>();
         button.onClick.AddListener(OnButtonClick);
