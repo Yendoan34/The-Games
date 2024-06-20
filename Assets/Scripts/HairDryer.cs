@@ -21,19 +21,22 @@ public class HairDryer : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, enemyLayer);
         if (hit.collider != null)
         {
-            rb = hit.collider.GetComponent<Rigidbody2D>();
-            Debug.Log(rb.velocity);
-            AudioManager.instance.PlaySound("Hair Dryer");
-            rb.AddForce(transform.right * thrust, ForceMode2D.Impulse);
-            timer += Time.deltaTime;
-            Debug.Log(timer);
-        }
-        if (timer >= 4f)
-        {
-            rb.velocity = new Vector2(0.0f, 0.0f);
-            rb.angularVelocity = 0f;
-            StartCoroutine(DestroyAfterDelay()); // Destroy the game object
+            Transform enemyTransform = hit.collider.GetComponent<Transform>();
+            if (enemyTransform != null)
+            {
+                Debug.Log("Enemy hit");
+                AudioManager.instance.PlaySound("Hair Dryer");
 
+                // Move the enemy
+                enemyTransform.position += new Vector3(thrust, 0, 0);
+                timer += Time.deltaTime;
+                Debug.Log(timer);
+
+                if (timer >= 4f)
+                {
+                    StartCoroutine(DestroyAfterDelay());
+                }
+            }
         }
     }
     private IEnumerator DestroyAfterDelay()
