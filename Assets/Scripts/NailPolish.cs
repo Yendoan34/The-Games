@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class NailPolish : MonoBehaviour
@@ -8,14 +9,15 @@ public class NailPolish : MonoBehaviour
     {
         if (collision.CompareTag("Enemy"))
         {
-            Rigidbody2D enemyRb = collision.GetComponent<Rigidbody2D>();
-
-            if (enemyRb != null)
+            if (collision != null)
             {
-                // Set the velocity of the enemy to zero
-                enemyRb.velocity = Vector2.zero;
+                
             }
         }
     }
-
+    private IEnumerator DestroyAfterDelay()
+    {
+        yield return new WaitForSeconds(3f); // Adjust the delay as needed
+        Destroy(gameObject); // Destroy the game object
+    }
 }

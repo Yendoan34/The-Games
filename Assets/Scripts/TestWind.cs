@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HairDryer : MonoBehaviour
+public class TestWind : MonoBehaviour
 {
     public LayerMask enemyLayer;
     public float rayDistance = 10f; // Set the distance for the raycast
