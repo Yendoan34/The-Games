@@ -20,6 +20,8 @@ public class Castle : MonoBehaviour
         {
             barbie.SetActive(false);
             fail.SetActive(true);
+            AudioManager.instance.PlaySound("Loose");
+
         }
     }
     void OnTriggerEnter2D(Collider2D collision)
@@ -27,6 +29,7 @@ public class Castle : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemies++;
+            Destroy(collision.gameObject);
         }
     }
 }

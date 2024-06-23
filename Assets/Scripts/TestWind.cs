@@ -6,8 +6,9 @@ public class TestWind : MonoBehaviour
 {
     public LayerMask enemyLayer;
     public float rayDistance = 10f; // Set the distance for the raycast
-    private float thrust = 0.005f;
+    private TestEnemy rb;
     private float timer = 0.0f;
+    private bool isEnemyStopped = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,27 +17,34 @@ public class TestWind : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        // Perform the raycast
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, enemyLayer);
-        if (hit.collider != null)
+        if (!isEnemyStopped)
         {
-            Transform enemyTransform = hit.collider.GetComponent<Transform>();
-            if (enemyTransform != null)
+            // Perform the raycast
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, enemyLayer);
+            if (hit.collider != null)
             {
-                Debug.Log("Enemy hit");
-                AudioManager.instance.PlaySound("Hair Dryer");
-
-                // Move the enemy
-                enemyTransform.position += new Vector3(thrust, 0, 0);
-                timer += Time.deltaTime;
-                Debug.Log(timer);
-
-                if (timer >= 4f)
+                rb = hit.collider.GetComponent<TestEnemy>();
+                if (rb != null)
                 {
-                    StartCoroutine(DestroyAfterDelay());
+                    AudioManager.instance.PlaySound("Hair Dryer");
+                    rb.StopMovement();
+                    isEnemyStopped = true;
+                    timer += Time.deltaTime;
                 }
             }
         }
+        else
+        {
+            if (timer >= 4f)
+            {
+                if (rb != null)
+                {
+                    rb.ResumeMovement();
+                }
+                isEnemyStopped = false; // Reset the state
+            }
+        }
+        
     }
     private IEnumerator DestroyAfterDelay()
     {

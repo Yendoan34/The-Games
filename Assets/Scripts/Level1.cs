@@ -7,6 +7,7 @@ public class Level1 : MonoBehaviour
     public float spawnRate = 4f; // Rate at which enemies will spawn
     public int maxEnemies = 8; // Maximum number of enemies to spawn
     public GameObject passedPanel;
+    public GameObject barbie;
     private bool stop = false;
     private GameObject[] enemies;
     private int enemiesSpawned = 0; // Counter for the number of spawned enemies
@@ -26,6 +27,7 @@ public class Level1 : MonoBehaviour
             if (CountAliveEnemies() == 0) // Check if all enemies are destroyed
             {
                 passedPanel.SetActive(true);
+                AudioManager.instance.PlaySound("Passed");
             }
         }
     }

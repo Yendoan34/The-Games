@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 897242722662325818}
   - component: {fileID: 4321824390140164317}
   - component: {fileID: 6093026287650551157}
+  - component: {fileID: 5664273634943875356}
   m_Layer: 0
   m_Name: Hair Dryer
   m_TagString: Untagged
@@ -159,6 +160,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2c85beddbe14bcd4a89d86ed369c5adc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyLayer:
+    serializedVersion: 2
+    m_Bits: 8
+  rayDistance: 10
+--- !u!114 &5664273634943875356
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5577372275933560399}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8965bf7eef591ff4b882c56f429f7c48, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   enemyLayer:

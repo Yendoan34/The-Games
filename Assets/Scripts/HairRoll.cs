@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEditor.VersionControl;
 using UnityEngine;
 
@@ -7,6 +8,7 @@ public class HairRoll : MonoBehaviour
 {
     public Rigidbody2D body;
     public float speed = 2f;
+    public GameObject star;
     private void Start()
     {
         AudioManager.instance.PlaySound("Hair Roll");
@@ -27,6 +29,9 @@ public class HairRoll : MonoBehaviour
     IEnumerator DestroyWithDelay(GameObject enemy, float delay)
     {
         yield return new WaitForSeconds(delay);
+        AudioManager.instance.PlaySound("Magic");
+        Vector3 targetPosition = transform.position + new Vector3(0, 2, 0);
+        GameObject point = Instantiate(star, targetPosition, Quaternion.identity);
         Destroy(enemy);
         Destroy(gameObject);
     }

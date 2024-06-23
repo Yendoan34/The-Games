@@ -866,8 +866,8 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1235408687}
-  - {fileID: 1949383107}
   - {fileID: 1619611374}
+  - {fileID: 1949383107}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1485,7 +1485,7 @@ Transform:
   m_GameObject: {fileID: 309937842}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.57, y: -2.53, z: -0.010112096}
+  m_LocalPosition: {x: -4.1, y: -2.53, z: -0.010112096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -1983,7 +1983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 336784418}
   star: {fileID: 3926248700067330148, guid: 81e5aaa1a9907f74da7da1632f5bc891, type: 3}
   dropPoint: {fileID: 643478764}
 --- !u!61 &336784422
@@ -2064,10 +2064,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a4e850e8e4b6046880296380bea678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  targetPosition: {fileID: 0}
+  moveSpeed: 1
+  targetPosition: {fileID: 1837917810}
   target: {fileID: 0}
-  castlePosition: {fileID: 0}
+  castlePosition: {fileID: 1990869912}
+  stop: 0
 --- !u!1001 &348402136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4639,6 +4640,7 @@ MonoBehaviour:
   spawnRate: 4
   maxEnemies: 8
   passedPanel: {fileID: 1949383106}
+  barbie: {fileID: 167308753}
 --- !u!1 &781932222
 GameObject:
   m_ObjectHideFlags: 0
@@ -5877,7 +5879,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9fb2c3eace8493f4ca238d5f0c65bb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxClicks: 3
+  maxClicks: 1
 --- !u!1 &1062500665
 GameObject:
   m_ObjectHideFlags: 0
@@ -7731,7 +7733,7 @@ Transform:
   m_GameObject: {fileID: 1581528463}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.13, y: -1.48, z: 0}
+  m_LocalPosition: {x: -6.26, y: -1.48, z: 0}
   m_LocalScale: {x: 0.6, y: 0.6, z: 0.6}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -7764,7 +7766,7 @@ RectTransform:
   m_GameObject: {fileID: 1619611373}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1.0000001, y: 1.0000001, z: 1.0000001}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1770155646}
@@ -10294,7 +10296,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 3
   maxHealth: 0
-  enemy: {fileID: 0}
+  enemy: {fileID: 1959379769}
   star: {fileID: 3926248700067330148, guid: 81e5aaa1a9907f74da7da1632f5bc891, type: 3}
   dropPoint: {fileID: 1947581371}
 --- !u!95 &1959379774
@@ -10330,10 +10332,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81a4e850e8e4b6046880296380bea678, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  moveSpeed: 2
-  targetPosition: {fileID: 0}
+  moveSpeed: 1
+  targetPosition: {fileID: 1714719677}
   target: {fileID: 0}
-  castlePosition: {fileID: 0}
+  castlePosition: {fileID: 468051873}
+  stop: 0
 --- !u!1 &1986781570
 GameObject:
   m_ObjectHideFlags: 0

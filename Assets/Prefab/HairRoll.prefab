@@ -163,3 +163,4 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   body: {fileID: 4321824390140164317}
   speed: 2
+  star: {fileID: 3926248700067330148, guid: 81e5aaa1a9907f74da7da1632f5bc891, type: 3}
