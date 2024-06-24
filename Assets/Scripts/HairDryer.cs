@@ -20,14 +20,15 @@ public class HairDryer : MonoBehaviour
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.right, rayDistance, enemyLayer);
         if (hit.collider != null)
         {
-            Transform enemyTransform = hit.collider.GetComponent<Transform>();
-            if (enemyTransform != null)
+            Enemy enemy = hit.collider.GetComponentInParent<Enemy>();
+            if (enemy != null)
             {
                 Debug.Log("Enemy hit");
                 AudioManager.instance.PlaySound("Hair Dryer");
 
-                // Move the enemy
-                enemyTransform.position += new Vector3(thrust, 0, 0);
+                // Apply push to the enemy
+                enemy.ApplyPush(Vector3.right, thrust, 4f);
+
                 timer += Time.deltaTime;
                 Debug.Log(timer);
 

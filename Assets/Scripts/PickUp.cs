@@ -35,7 +35,7 @@ public class PickUp : MonoBehaviour
     public void Point()
     {
         score++;
-        scoreText.text = ("Score: " + score);
+        scoreText.text = ("Stars: " + score);
         gameObject.SetActive(false);
     }
 }

@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.Burst.CompilerServices;
 using UnityEngine;
 
 public class NailPolish : MonoBehaviour
@@ -7,10 +8,10 @@ public class NailPolish : MonoBehaviour
     private bool enemyHit = false;
     private Transform enemyTransform;
     private Vector3 originalPosition;
-    private float moveDistance = -1f; // Distance to move the enemy to the left
+    private float moveDistance = -0.8f; // Distance to move the enemy to the left
     private Vector3 targetPosition;
     private float moveTimer = 0.0f;
-    private float moveDuration = 1f; // Duration for moving the enemy
+    private float moveDuration = 0.8f; // Duration for moving the enemy
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -18,6 +19,7 @@ public class NailPolish : MonoBehaviour
             if (collision != null)
             {
                 enemyTransform = collision.GetComponent<Transform>();
+                Enemy enemy = collision.GetComponentInParent<Enemy>();
                 if (enemyTransform != null)
                 {
                     Debug.Log("Enemy hit");
@@ -25,6 +27,7 @@ public class NailPolish : MonoBehaviour
                     enemyHit = true; // Set the flag to true
                     originalPosition = enemyTransform.position; // Save the original position
                     targetPosition = originalPosition + new Vector3(moveDistance, 0, 0); // Calculate the target position
+                    enemy.ApplyPush(Vector3.right, 0f, 3f);
                 }
             }
         }
