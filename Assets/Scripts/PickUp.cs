@@ -12,6 +12,10 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        // Reset the score when the game starts
+        ResetScore();
+        // Retrieve the score from PlayerPrefs
+        score = PlayerPrefs.GetInt("Score", 0);
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
@@ -35,7 +39,20 @@ public class PickUp : MonoBehaviour
     public void Point()
     {
         score++;
+        SaveScore(); // Save the score after incrementing
         scoreText.text = ("Stars: " + score);
         gameObject.SetActive(false);
+    }
+    private void SaveScore()
+    {
+        // Save the score to PlayerPrefs
+        PlayerPrefs.SetInt("Score", score);
+        PlayerPrefs.Save(); // Make sure to call Save() to save the changes immediately
+    }
+
+    public void ResetScore()
+    {
+        score = 0;
+        SaveScore(); // Save the reset score to PlayerPrefs
     }
 }
