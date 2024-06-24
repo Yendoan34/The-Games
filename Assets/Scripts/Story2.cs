@@ -12,6 +12,7 @@ public class Story2 : MonoBehaviour
     public Animator fairy;
     public GameObject teddyObject;
     public Animator teddy;
+    public GameObject nextButton;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,5 +41,7 @@ public class Story2 : MonoBehaviour
         thunders2.SetActive(false);
         thunders3.SetActive(true);
         AudioManager.instance.PlaySound("Thunder");
+        yield return new WaitForSeconds(3f);
+        nextButton.SetActive(true);
     }
 }

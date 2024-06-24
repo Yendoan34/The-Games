@@ -20,7 +20,6 @@ public class Castle : MonoBehaviour
         {
             barbie.SetActive(false);
             fail.SetActive(true);
-            AudioManager.instance.PlaySound("Loose");
 
         }
     }

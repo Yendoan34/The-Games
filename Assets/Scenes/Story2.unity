@@ -1663,6 +1663,7 @@ MonoBehaviour:
   fairy: {fileID: 1494779061}
   teddyObject: {fileID: 2068421792}
   teddy: {fileID: 2068421793}
+  nextButton: {fileID: 1225839300}
 --- !u!4 &1062322155
 Transform:
   m_ObjectHideFlags: 0

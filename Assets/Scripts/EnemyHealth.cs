@@ -13,6 +13,9 @@ public class EnemyHealth : MonoBehaviour
     void Start()
     {
         maxHealth = health;
+        // Ignore collisions between enemy layers
+        int enemyLayer = LayerMask.NameToLayer("Enemy");
+        Physics2D.IgnoreLayerCollision(enemyLayer, enemyLayer, true);
     }
     void OnTriggerEnter2D(Collider2D collision)
     {
