@@ -30,7 +30,30 @@ public class CheckAdded : MonoBehaviour
         rollText = GameObject.Find("RollText").GetComponent<TextMeshProUGUI>();
         rollText.text = ("Bought hair roll: " + rollAdded);
     }
-
+    private void Adding()
+    {
+        LimitedButtonClick click = gameObject.GetComponent<LimitedButtonClick>();
+        if (gameObject.name == "Brush")
+        {
+            click.maxClicks += brushAdded;
+        }
+        else if (gameObject.name == "Hair Dryer")
+        {
+            click.maxClicks += dryerAdded;
+        }
+        else if (gameObject.name == "Nail Polish")
+        {
+            click.maxClicks += nailAdded;
+        }
+        else if (gameObject.name == "Hair Roll")
+        {
+            click.maxClicks += rollAdded;
+        }
+        else
+        {
+            click.maxClicks += 0;
+        }
+    }
     // Update is called once per frame
     void Update()
     {

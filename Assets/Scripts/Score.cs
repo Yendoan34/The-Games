@@ -16,11 +16,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        score = PlayerPrefs.GetInt("Score", 0);
-        addedBrush = PlayerPrefs.GetInt("Added Brush", 0);
-        addedDryer = PlayerPrefs.GetInt("Added Dryer", 0);
-        addedNail = PlayerPrefs.GetInt("Added Nail", 0);
-        addedRoll = PlayerPrefs.GetInt("Added Roll", 0);
+        ResetAdded();
         starText = GameObject.Find("StarAmountText").GetComponent<TextMeshProUGUI>();
         starText.text = ("Star amount: " + score);
     }
@@ -119,7 +115,10 @@ public class Score : MonoBehaviour
 
     public void ResetAdded()
     {
-        score = 0;
-        SaveScore(); // Save the reset score to PlayerPrefs
+        addedBrush = 0;
+        addedDryer = 0;
+        addedNail = 0;
+        addedRoll = 0;
+        SaveAdded(); // Save the reset score to PlayerPrefs
     }
 }

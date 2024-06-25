@@ -5,6 +5,7 @@ using UnityEngine;
 public class Castle : MonoBehaviour
 {
     private float enemies = 0;
+    public int maxEnemy = 8;
     public GameObject barbie;
     public GameObject fail;
     // Start is called before the first frame update
@@ -16,7 +17,7 @@ public class Castle : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (enemies == 8)
+        if (enemies == maxEnemy)
         {
             barbie.SetActive(false);
             fail.SetActive(true);

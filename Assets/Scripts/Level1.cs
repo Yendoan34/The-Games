@@ -8,8 +8,9 @@ public class Level1 : MonoBehaviour
     public GameObject teddy2; // The teddy2 to spawn
     public float spawnRate = 4f; // Rate at which enemies will spawn
     public int maxEnemies = 8; // Maximum number of enemies to spawn
-    public GameObject passedPanel;
+    public GameObject nextButton;
     public GameObject barbie;
+    public GameObject fail;
     private bool stop = false;
     private GameObject[] enemies;
     private int enemiesSpawned = 0; // Counter for the number of spawned enemies
@@ -17,6 +18,9 @@ public class Level1 : MonoBehaviour
     private int teddySpawned = 0; // Counter for the number of spawned enemies
     private int fairy2Spawned = 0; // Counter for the number of spawned enemies
     private int teddy2Spawned = 0; // Counter for the number of spawned enemies
+    private float timer = 0.0f;
+    public float maxtime = 38f;
+    public int passAmount = 3;
     void Start()
     {
         enemies = new GameObject[maxEnemies]; // Initialize the array
@@ -28,13 +32,27 @@ public class Level1 : MonoBehaviour
     }
     void Update()
     {
+        timer += Time.deltaTime;
         if (stop==true)
         {
             if (CountAliveEnemies() == 0) // Check if all enemies are destroyed
             {
-                passedPanel.SetActive(true);
+                nextButton.SetActive(true);
+            }
+            if (timer >= maxtime)
+            {
+                if (CountAliveEnemies() <= passAmount)
+                {
+                    nextButton.SetActive(true);
+                }
+                else
+                {
+                    barbie.SetActive(false);
+                    fail.SetActive(true);
+                }
             }
         }
+
     }
     void SpawnFairy()
     {

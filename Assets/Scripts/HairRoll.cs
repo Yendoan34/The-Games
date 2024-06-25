@@ -23,7 +23,7 @@ public class HairRoll : MonoBehaviour
         if (collision.gameObject.CompareTag("Enemy"))
         {
             Destroy(gameObject.GetComponent<Collider2D>());
-            StartCoroutine(DestroyWithDelay(collision.gameObject, 1f));
+            StartCoroutine(DestroyWithDelay(collision.transform.parent.gameObject, 1f));
         }
     }
     IEnumerator DestroyWithDelay(GameObject enemy, float delay)

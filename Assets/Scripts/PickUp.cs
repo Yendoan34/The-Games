@@ -14,8 +14,6 @@ public class PickUp : MonoBehaviour
     {
         // Reset the score when the game starts
         ResetScore();
-        // Retrieve the score from PlayerPrefs
-        score = PlayerPrefs.GetInt("Score", 0);
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
@@ -29,7 +27,7 @@ public class PickUp : MonoBehaviour
 
             // Find the closest target to the mouse position
             float distance = Vector3.Distance(mousePosition, transform.position);
-            if (distance <= 0.55f)
+            if (distance <= 0.1f)
             {
                 Point();
             }
