@@ -21,6 +21,7 @@ public class Level1 : MonoBehaviour
     private float timer = 0.0f;
     public float maxtime = 38f;
     public int passAmount = 3;
+    private bool appearedbutton = false;
     void Start()
     {
         enemies = new GameObject[maxEnemies]; // Initialize the array
@@ -35,17 +36,19 @@ public class Level1 : MonoBehaviour
         timer += Time.deltaTime;
         if (stop==true)
         {
-            if (CountAliveEnemies() == 0) // Check if all enemies are destroyed
+            if (CountAliveEnemies() == 0 && !appearedbutton) // Check if all enemies are destroyed
             {
                 nextButton.SetActive(true);
+                appearedbutton = true;
             }
             if (timer >= maxtime)
             {
-                if (CountAliveEnemies() <= passAmount)
+                if (CountAliveEnemies() <= passAmount && !appearedbutton)
                 {
                     nextButton.SetActive(true);
+                    appearedbutton = true;
                 }
-                else
+                else if (!appearedbutton)
                 {
                     barbie.SetActive(false);
                     fail.SetActive(true);

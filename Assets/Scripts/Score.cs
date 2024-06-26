@@ -16,6 +16,7 @@ public class Score : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        score = PlayerPrefs.GetInt("Score", 0);
         ResetAdded();
         starText = GameObject.Find("StarAmountText").GetComponent<TextMeshProUGUI>();
         starText.text = ("Star amount: " + score);
