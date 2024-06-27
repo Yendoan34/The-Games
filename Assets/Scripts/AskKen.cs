@@ -5,6 +5,7 @@ using UnityEngine;
 public class AskKen : MonoBehaviour
 {
     public GameObject ken;
+    private bool asked;
     // Start is called before the first frame update
     void Start()
     {
@@ -14,9 +15,10 @@ public class AskKen : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space) && !asked)
         {
             ken.SetActive(true);
+            asked = true;
         }
     }
 }

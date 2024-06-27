@@ -5,14 +5,11 @@ using UnityEngine;
 public class Ken : MonoBehaviour
 {
     private float elapsedTime = 0f;
-    private bool isDestroying = true;
-    private Animator ken;
     public GameObject star;
     void Start()
     {
-        ken = GetComponent<Animator>(); // Get the Animator component
-        ken.SetTrigger("Ken Fire");
         AudioManager.instance.PlaySound("Magic");
+        DestroyAllEnemies();
     }
     // Update is called once per frame
     void Update()
@@ -20,15 +17,9 @@ public class Ken : MonoBehaviour
         // Update the elapsed time
         elapsedTime += Time.deltaTime;
 
-        // If the elapsed time is less than or equal to 4 seconds, continue destroying enemies
-        if (elapsedTime <= 4f && isDestroying)
+        // Destroy Ken after 2 seconds
+        if (elapsedTime > 2f)
         {
-            DestroyAllEnemies();
-        }
-        else
-        {
-            // After 4 seconds, stop destroying enemies
-            isDestroying = false;
             Destroy(gameObject);
         }
     }
@@ -40,8 +31,12 @@ public class Ken : MonoBehaviour
         // Destroy each enemy game object
         foreach (GameObject enemy in enemies)
         {
-            GameObject point = Instantiate(star, enemy.transform.position, Quaternion.identity);
-            Destroy(enemy);
+            // Check if the enemy is the root object or its parent does not have the "Enemy" tag
+            if (enemy.transform.parent == null || enemy.transform.parent.tag != "Enemy")
+            {
+                GameObject point = Instantiate(star, enemy.transform.position, Quaternion.identity);
+                Destroy(enemy);
+            }
         }
     }
 }
