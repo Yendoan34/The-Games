@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Pause the game when pressing Esc
 public class GamePause : MonoBehaviour
 {
     public GameObject instruction;
@@ -27,17 +27,15 @@ public class GamePause : MonoBehaviour
     {
         Time.timeScale = 0; // Pause the game
         isPaused = true;
-        instruction.SetActive(true);
-        AudioManager.instance.PauseMusic(); // Optional: Pause all sounds
-        // Additional logic for pausing (e.g., show pause menu)
+        instruction.SetActive(true); // Show Instructions 
+        AudioManager.instance.PauseMusic(); // Pause music
     }
 
     void ResumeGame()
     {
         Time.timeScale = 1; // Resume the game
         isPaused = false;
-        instruction.SetActive(false);
-        AudioManager.instance.ResumeMusic(); // Optional: Resume all sounds
-        // Additional logic for resuming (e.g., hide pause menu)
+        instruction.SetActive(false); // close Instructions
+        AudioManager.instance.ResumeMusic(); // Resume music
     }
 }

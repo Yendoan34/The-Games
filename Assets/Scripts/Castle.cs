@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// When enemy collide with this object, the enemy will pass to the castle
 public class Castle : MonoBehaviour
 {
     private float enemies = 0;

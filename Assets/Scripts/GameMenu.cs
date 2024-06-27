@@ -7,7 +7,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-
+// Open a specific scene
 public class GameMenu : MonoBehaviour
 
 {

@@ -1,13 +1,13 @@
 using System.Collections;
 using UnityEngine;
-
+// Script to control Player actions
 public class Player : MonoBehaviour
 {
     public int shootSpeed = 10;
     public GameObject gun;
     public GameObject[] projectiles; // Array to hold different projectiles
-    public Transform shootPoint;
-    public Transform[] targets;
+    public Transform shootPoint; // place the bullet will be shot out
+    public Transform[] targets; // Array to hold all the possible targets
     private int currentProjectile = 0; // Index to keep track of current projectile type
     private Animator animator; // Reference to the Animator component
 
@@ -20,12 +20,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
+        // Check if the weapon buttn is clicked and a target place is clicked
         if (isShooting && Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            Vector3 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition); // find the place of the mouse when it is clicked
             mousePosition.z = 0; // Set z to 0 since we're in 2D
 
-            float closestDistance = float.MaxValue;
+            float closestDistance = float.MaxValue; 
             Transform closestTarget = null;
 
             // Find the closest target to the mouse position
@@ -58,10 +59,10 @@ public class Player : MonoBehaviour
 
     private void ShootAtTarget(Transform target)
     {
-        AudioManager.instance.PlaySound("Shoot");
+        AudioManager.instance.PlaySound("Shoot"); // Play the shoot sound
         // Trigger the shooting animation
         animator.SetTrigger("Shoot");
-        gun.SetActive(true);
+        gun.SetActive(true); // Appear the gun
 
         // Instantiate the projectile at the shoot point
         GameObject projectile = Instantiate(projectiles[currentProjectile], shootPoint.position, Quaternion.identity);
@@ -110,6 +111,6 @@ public class Player : MonoBehaviour
 
     public void SwitchProjectile(int i)
     {
-        currentProjectile = i % projectiles.Length;
+        currentProjectile = i % projectiles.Length; // change bullet
     }
 }

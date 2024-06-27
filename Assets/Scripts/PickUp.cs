@@ -12,8 +12,6 @@ public class PickUp : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        // Reset the score when the game starts
-        ResetScore();
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 

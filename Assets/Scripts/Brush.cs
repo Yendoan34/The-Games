@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class Brush : MonoBehaviour
 {
-    public GameObject spike;
-    public Transform shootPoint;
+    public GameObject spike; // aka bullet
+    public Transform shootPoint; // place bullet is shot out
     public int shootSpeed = 10;
     public float fireRate = 1f; // Time between shots
     public float spikeAmount = 4f;

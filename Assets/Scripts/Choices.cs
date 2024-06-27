@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-
+// when hover at the upper area of the screen, the choices of weapons will be showed
 public class Choices : MonoBehaviour
 {
     public GameObject choices;

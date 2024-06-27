@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Activate Ken when press Space key
 public class AskKen : MonoBehaviour
 {
     public GameObject ken;

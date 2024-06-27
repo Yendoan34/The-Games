@@ -1,10 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+// Manage enemy health
 public class EnemyHealth : MonoBehaviour
 {
-    public int health = 3;
+    public int health = 3; // amount of health that enemy has
     public int maxHealth;
     public GameObject enemy;
     public GameObject star;
@@ -22,14 +22,14 @@ public class EnemyHealth : MonoBehaviour
         if (collision.CompareTag("Respawn"))
         {
             AudioManager.instance.PlaySound("Hit");
-            health--;
+            health--; // decrease health when being shot
             if (health <= 0)
             {
                 AudioManager.instance.PlaySound("Magic");
-                GameObject point = Instantiate(star, dropPoint.position, Quaternion.identity);
-                Destroy(enemy);
+                GameObject point = Instantiate(star, dropPoint.position, Quaternion.identity); // drop a star for player to collect
+                Destroy(enemy); // Enemy dies when health is less than 0
             }
-            Destroy(collision.gameObject);
+            Destroy(collision.gameObject); // destroy the bullet
         }
     }
 }

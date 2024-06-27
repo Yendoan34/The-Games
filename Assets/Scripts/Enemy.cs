@@ -1,21 +1,22 @@
 using UnityEngine;
-
+// Move the enemy
 public class Enemy : MonoBehaviour
 {
     public float moveSpeed = 2f;
-    public Transform targetPosition;
+    public Transform targetPosition; // first attack point
     public Transform target;
-    public Transform castlePosition;
+    public Transform castlePosition; // place to reach to pass intothe castle
     private bool isBeingPushed = false;
     private float pushDuration = 4f;
     private float pushTimer = 0f;
     void Start()
     {
-        target = targetPosition;
+        target = targetPosition; // set the first target
     }
 
     void Update()
     {
+        // check if enemy is pushed by weapon or not
         if (isBeingPushed)
         {
             pushTimer += Time.deltaTime;
