@@ -4,8 +4,8 @@ public class EnemySpawnPoint : MonoBehaviour
 {
     public GameObject enemy; // Prefab of the enemy to spawn
     public float spawnRate = 2f; // Rate at which enemies will spawn
-    public int maxEnemies = 4; // Maximum number of enemies to spawn
-    public GameObject passedPanel;
+    public int maxEnemies = 1; // Maximum number of enemies to spawn
+    public GameObject nextButton;
     private bool stop = false;
     private GameObject[] enemies;
     private int enemiesSpawned = 0; // Counter for the number of spawned enemies
@@ -21,7 +21,7 @@ public class EnemySpawnPoint : MonoBehaviour
         {
             if (CountAliveEnemies() == 0) // Check if all enemies are destroyed
             {
-                passedPanel.SetActive(true);
+                nextButton.SetActive(true);
             }
         }
     }
@@ -31,6 +31,7 @@ public class EnemySpawnPoint : MonoBehaviour
         {
             // Spawn enemy at the position of the spawn point
             GameObject newEnemy = Instantiate(enemy, transform.position, Quaternion.identity);
+            newEnemy.SetActive(true); // Ensure the spawned enemy is enabled
             enemies[enemiesSpawned] = newEnemy; // Add the spawned enemy to the array
             enemiesSpawned++;
         }

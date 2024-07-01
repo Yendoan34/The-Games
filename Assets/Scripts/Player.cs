@@ -1,4 +1,5 @@
 using System.Collections;
+using TMPro;
 using UnityEngine;
 // Script to control Player actions
 public class Player : MonoBehaviour
@@ -10,7 +11,7 @@ public class Player : MonoBehaviour
     public Transform[] targets; // Array to hold all the possible targets
     private int currentProjectile = 0; // Index to keep track of current projectile type
     private Animator animator; // Reference to the Animator component
-
+    public GameObject noTargetText;
     private bool isShooting = false; // Flag to track if shoot method is activated
 
     void Start()
@@ -45,7 +46,10 @@ public class Player : MonoBehaviour
             {
                 ShootAtTarget(closestTarget);
             }
-
+            else
+            {
+                StartCoroutine(ShowNoTarget());
+            }
             // Reset the shooting flag
             isShooting = false;
         }
@@ -112,5 +116,11 @@ public class Player : MonoBehaviour
     public void SwitchProjectile(int i)
     {
         currentProjectile = i % projectiles.Length; // change bullet
+    }
+    private IEnumerator ShowNoTarget()
+    {
+        noTargetText.SetActive(true);
+        yield return new WaitForSeconds(1f); // Adjust the delay as needed
+        noTargetText.SetActive(false);
     }
 }
