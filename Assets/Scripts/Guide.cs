@@ -11,6 +11,7 @@ public class Guide : MonoBehaviour
     TextMeshProUGUI guideText;
     private bool showed = false;
     private bool clicked = false;
+    private bool collected = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,12 @@ public class Guide : MonoBehaviour
             guideText.text = ("Click to choose weapon");
             showed = true;
             ResumeGame();
+        }
+        PickUp star = (PickUp)FindObjectOfType(typeof(PickUp));
+        if (star != null && !collected)
+        {
+            guideText.text = ("Collect the stars");
+            collected = true;
         }
     }
     void OnMouseOver()

@@ -74,7 +74,7 @@ public class Score : MonoBehaviour
     }
     public void BuyRoll()
     {
-        if (score >= 2)
+        if (score >= 3)
         {
             score -= 3;
             addedRoll++;
