@@ -3263,6 +3263,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 10
+  noTarget: {fileID: 165316512}
 --- !u!1 &1197991498
 GameObject:
   m_ObjectHideFlags: 0

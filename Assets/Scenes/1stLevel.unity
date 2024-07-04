@@ -386,6 +386,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 3
+  noTarget: {fileID: 165316512}
 --- !u!1 &71028930
 GameObject:
   m_ObjectHideFlags: 0
@@ -4606,6 +4607,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 3
+  noTarget: {fileID: 165316512}
 --- !u!1 &610846784
 GameObject:
   m_ObjectHideFlags: 0
@@ -7134,6 +7136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 10
+  noTarget: {fileID: 165316512}
 --- !u!1 &1022431970
 GameObject:
   m_ObjectHideFlags: 0
@@ -15021,6 +15024,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 9
+  noTarget: {fileID: 165316512}
 --- !u!1 &2086027932
 GameObject:
   m_ObjectHideFlags: 0

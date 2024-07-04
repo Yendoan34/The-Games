@@ -387,6 +387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 3
+  noTarget: {fileID: 1888715449}
 --- !u!114 &14667337
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3470,6 +3471,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 3
+  noTarget: {fileID: 1888715449}
 --- !u!114 &606025612
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5537,6 +5539,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 10
+  noTarget: {fileID: 1888715449}
 --- !u!114 &997405536
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12657,6 +12660,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxClicks: 9
+  noTarget: {fileID: 1888715449}
 --- !u!114 &2059812930
 MonoBehaviour:
   m_ObjectHideFlags: 0
