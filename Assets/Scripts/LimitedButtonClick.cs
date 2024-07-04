@@ -29,7 +29,7 @@ public class LimitedButtonClick : MonoBehaviour
         {
             if (clickCount >= maxClicks)
             {
-                this.button.interactable = true;
+                lastClickedButton.button.interactable = true;
             }
             clickCount--; // Disable the last click because cannot find target
             time = maxClicks - clickCount; // Update the time amount
