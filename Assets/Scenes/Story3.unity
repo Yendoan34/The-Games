@@ -569,6 +569,7 @@ MonoBehaviour:
   - {fileID: 5577372275933560399, guid: bb8f738dfdd823c4e856a36f0e9ea359, type: 3}
   shootPoint: {fileID: 1992671094}
   targets: []
+  noTargetText: {fileID: 0}
 --- !u!1 &184231651
 GameObject:
   m_ObjectHideFlags: 0
@@ -1948,6 +1949,10 @@ PrefabInstance:
     - target: {fileID: 3191708942515836952, guid: 06b64cdd5a43cb84aa66598c63cec741, type: 3}
       propertyPath: m_Name
       value: AudioManager
+      objectReference: {fileID: 0}
+    - target: {fileID: 3191708942515836952, guid: 06b64cdd5a43cb84aa66598c63cec741, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
