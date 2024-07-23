@@ -3715,6 +3715,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1153482417158814949, guid: 06b64cdd5a43cb84aa66598c63cec741, type: 3}
+      propertyPath: musicVolumeSlider
+      value: 
+      objectReference: {fileID: 7522196826646656934}
+    - target: {fileID: 1153482417158814949, guid: 06b64cdd5a43cb84aa66598c63cec741, type: 3}
+      propertyPath: soundVolumeSlider
+      value: 
+      objectReference: {fileID: 1408727658}
     - target: {fileID: 3073685573201668357, guid: 06b64cdd5a43cb84aa66598c63cec741, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.12395756
