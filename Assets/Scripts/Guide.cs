@@ -15,6 +15,7 @@ public class Guide : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CheckInitialMousePosition();
         guideText = GameObject.Find("GuideText").GetComponent<TextMeshProUGUI>();
         guideText.text = ("Hover at the upper area");
         PauseGame();
@@ -23,6 +24,7 @@ public class Guide : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        CheckInitialMousePosition();
         if (!arrow1.activeSelf && !showed)
         {
             arrow2.SetActive(true);
@@ -58,6 +60,16 @@ public class Guide : MonoBehaviour
             arrow3.SetActive(true);
             guideText.text = ("Choose a target position to place the weapon");
             clicked = true;
+        }
+    }
+    void CheckInitialMousePosition()
+    {
+        Vector2 mousePosition = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        Collider2D collider2D = GetComponent<Collider2D>();
+
+        if (collider2D != null && collider2D.OverlapPoint(mousePosition))
+        {
+            OnMouseOver();
         }
     }
 }
