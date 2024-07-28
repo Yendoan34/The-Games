@@ -5710,7 +5710,6 @@ MonoBehaviour:
   nextButton: {fileID: 1775918748}
   barbie: {fileID: 167308753}
   fail: {fileID: 1619611373}
-  maxtime: 38
   passAmount: 3
 --- !u!1 &721563954
 GameObject:
@@ -9815,6 +9814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   passEnemy: 0
+  dieEnemy: 0
 --- !u!1001 &1423442234
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -18,12 +18,12 @@ public class Level1 : MonoBehaviour
     private int teddySpawned = 0; // Counter for the number of spawned enemies
     private int fairy2Spawned = 0; // Counter for the number of spawned enemies
     private int teddy2Spawned = 0; // Counter for the number of spawned enemies
-    private float timer = 0.0f;
-    public float maxtime = 38f;
     public int passAmount = 3;
     private bool appearedbutton = false;
+    private CountEnemy passed;
     void Start()
     {
+        passed = GameObject.Find("Manager").GetComponent<CountEnemy>();
         enemies = new GameObject[maxEnemies]; // Initialize the array
         // Start spawning enemies
         InvokeRepeating("SpawnFairy", 2f, spawnRate);
@@ -33,7 +33,6 @@ public class Level1 : MonoBehaviour
     }
     void Update()
     {
-        timer += Time.deltaTime;
         if (stop==true)
         {
             if (CountAliveEnemies() == 0 && !appearedbutton) // Check if all enemies are destroyed
@@ -41,7 +40,7 @@ public class Level1 : MonoBehaviour
                 nextButton.SetActive(true);
                 appearedbutton = true;
             }
-            if (timer >= maxtime)
+            if ((passed.passEnemy + passed.dieEnemy) == maxEnemies)
             {
                 if (CountAliveEnemies() <= passAmount && !appearedbutton)
                 {

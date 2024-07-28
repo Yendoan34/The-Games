@@ -8,10 +8,11 @@ public class Castle : MonoBehaviour
     public int maxEnemy = 8;
     public GameObject barbie;
     public GameObject fail;
+    private CountEnemy passed;
     // Start is called before the first frame update
     void Start()
     {
-
+        passed = GameObject.Find("Manager").GetComponent<CountEnemy>();
     }
 
     // Update is called once per frame
@@ -29,6 +30,7 @@ public class Castle : MonoBehaviour
         if (collision.CompareTag("Enemy"))
         {
             enemies++;
+            passed.passEnemy++;
             Destroy(collision.gameObject);
         }
     }

@@ -9,9 +9,12 @@ public class EnemyHealth : MonoBehaviour
     public GameObject enemy;
     public GameObject star;
     public Transform dropPoint;
+    private CountEnemy passed;
     // Start is called before the first frame update
     void Start()
     {
+        passed = GameObject.Find("Manager").GetComponent<CountEnemy>();
+
         maxHealth = health;
         // Ignore collisions between enemy layers
         int enemyLayer = LayerMask.NameToLayer("Enemy");
@@ -27,6 +30,7 @@ public class EnemyHealth : MonoBehaviour
             {
                 AudioManager.instance.PlaySound("Magic");
                 GameObject point = Instantiate(star, dropPoint.position, Quaternion.identity); // drop a star for player to collect
+                passed.dieEnemy++;
                 Destroy(enemy); // Enemy dies when health is less than 0
             }
             Destroy(collision.gameObject); // destroy the bullet

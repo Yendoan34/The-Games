@@ -9,8 +9,10 @@ public class HairRoll : MonoBehaviour
     public Rigidbody2D body;
     public float speed = 2f;
     public GameObject star;
+    private CountEnemy passed;
     private void Start()
     {
+        passed = GameObject.Find("Manager").GetComponent<CountEnemy>();
         AudioManager.instance.PlaySound("Hair Roll");
     }
     // Update is called once per frame
@@ -32,6 +34,7 @@ public class HairRoll : MonoBehaviour
         AudioManager.instance.PlaySound("Magic");
         Vector3 targetPosition = transform.position + new Vector3(0, 2, 0);
         GameObject point = Instantiate(star, targetPosition, Quaternion.identity);
+        passed.dieEnemy++;
         Destroy(enemy);
         Destroy(gameObject);
     }

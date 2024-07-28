@@ -5,6 +5,7 @@ using UnityEngine;
 public class CountEnemy : MonoBehaviour
 {
     public int passEnemy = 0;
+    public int dieEnemy = 0;
     // Start is called before the first frame update
     void Start()
     {
