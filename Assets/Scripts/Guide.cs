@@ -35,7 +35,7 @@ public class Guide : MonoBehaviour
         PickUp star = (PickUp)FindObjectOfType(typeof(PickUp));
         if (star != null && !collected)
         {
-            guideText.text = ("Collect the stars");
+            guideText.text = ("Click to collect the stars");
             collected = true;
         }
     }
