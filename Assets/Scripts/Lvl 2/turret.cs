@@ -7,10 +7,15 @@ public class turret : MonoBehaviour
 {
     [SerializeField] Transform turretRotationPoint;
     [SerializeField] LayerMask enemyMask;
+    [SerializeField] GameObject bulletPrefab;
+    [SerializeField] Transform firingPoint;
+
     [SerializeField] float targetingRange = 5f;
     [SerializeField] float rotationSpeed = 10f;
+    [SerializeField] float bps = 1f;
 
     Transform target;
+    float timeUntilFire;
 
     void Update()
     {
@@ -26,6 +31,23 @@ public class turret : MonoBehaviour
         {
             target = null;
         }
+        else
+        {
+            timeUntilFire += Time.deltaTime;
+
+            if (timeUntilFire >= 1f / bps)
+            {
+                Shoot();
+                timeUntilFire = 0f;
+            }
+        }
+    }
+
+    void Shoot()
+    {
+        GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
+        Bullet bulletScript = bulletObj.GetComponent<Bullet>();
+        bulletScript.SetTarget(target);
     }
 
     void FindTarget()
