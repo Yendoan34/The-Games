@@ -4,11 +4,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class goodEndingDialogue : MonoBehaviour
+public class friendshipEndingDialogue : MonoBehaviour
 {
     public GameObject[] objectsToToggle; // Array of GameObjects to toggle
     public Animator barbie;
-    public Animator ken;
+    public Animator teddy;
     private int currentIndex = 0; // Index of the currently active object
 
     public void Start()
@@ -29,17 +29,9 @@ public class goodEndingDialogue : MonoBehaviour
             objectsToToggle[currentIndex].SetActive(true);
         }
 
-        if (currentIndex == 1)
+        if (currentIndex == 2)
         {
-            barbie.SetTrigger("Talk");
-        }
-        else if (currentIndex == 2)
-        {
-            ken.SetTrigger("Ken Talk");
-        }
-        else if (currentIndex == 4)
-        {
-            barbie.SetTrigger("Talk");
+            teddy.SetTrigger("Teddy Talking");
         }
         else
         {

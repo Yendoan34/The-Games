@@ -5,6 +5,7 @@ using UnityEngine;
 public class SecondKen : MonoBehaviour
 {
     float time = 0f;
+    int KenDamage = 6;
 
     void Start()
     {
@@ -26,9 +27,10 @@ public class SecondKen : MonoBehaviour
     void KenThing()
     {
         GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
-        
+
         foreach (GameObject enemy in enemies)
         {
+            enemy.gameObject.GetComponent<EnemyHealth2>().TakeDamage(KenDamage);
             Destroy(enemy);
         }
     }

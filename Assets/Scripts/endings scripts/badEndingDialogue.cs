@@ -7,12 +7,12 @@ using UnityEngine.UI;
 public class badEndingDialogue : MonoBehaviour
 {
     public GameObject[] objectsToToggle; // Array of GameObjects to toggle
-    //public Animator teddy;
+    public Animator teddy;
     private int currentIndex = 0; // Index of the currently active object
 
     public void Start()
     {
-        //teddy.SetTrigger("Talk");
+        teddy.SetTrigger("Teddy Talking");
     }
 
     public void OnNextButtonClick()
@@ -26,6 +26,11 @@ public class badEndingDialogue : MonoBehaviour
             currentIndex++;
             // Enable the next object
             objectsToToggle[currentIndex].SetActive(true);
+        }
+
+        if (currentIndex == 1)
+        {
+            teddy.SetTrigger("Teddy Talking");
         }
         else
         {
