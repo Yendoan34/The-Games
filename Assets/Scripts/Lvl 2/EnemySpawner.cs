@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SceneManagement;
+
 
 public class EnemySpawner : MonoBehaviour
 {
@@ -14,8 +16,8 @@ public class EnemySpawner : MonoBehaviour
 
     public static UnityEvent onEnemyDestroy = new UnityEvent();
 
-    int currentWave = 1;
-    int enemiesAlive;
+    public int currentWave = 1;
+    public int enemiesAlive = 0;
     int enemiesLeftToSpawn;
     float timeSinceLastSpawn;
     bool isSpawning = false;
@@ -49,6 +51,11 @@ public class EnemySpawner : MonoBehaviour
         {
             EndWave();
         }
+
+        if (currentWave >= 3 && enemiesAlive == 0)
+        {
+            SceneManager.LoadScene(7);
+        }
     }
 
     void EnemyDestroyed()
@@ -69,12 +76,17 @@ public class EnemySpawner : MonoBehaviour
         isSpawning = false;
         timeSinceLastSpawn = 0f;
         currentWave++;
-        StartCoroutine(StartWave());
+
+        if (currentWave < 3)
+        {
+            StartCoroutine(StartWave());
+        }
     }
 
     void SpawnEnemy()
     {
-        GameObject prefabToSpawn = enemyPrefabs[0];
+        int index = Random.Range(0, enemyPrefabs.Length);
+        GameObject prefabToSpawn = enemyPrefabs[index];
         Instantiate(prefabToSpawn, LevelManager.main.startPoint.position, Quaternion.identity);
     }
 
