@@ -8,11 +8,14 @@ public class EnemyMovement : MonoBehaviour
     [SerializeField] float moveSpeed = 2f;
 
     Transform target;
+    GameObject castle;
     int pathIndex = 0;
+    int increase = 1;
 
     void Start()
     {
         target = LevelManager.main.path[pathIndex];
+        castle = GameObject.Find("Castle Door");
     }
 
     void Update()
@@ -25,6 +28,7 @@ public class EnemyMovement : MonoBehaviour
             if (pathIndex == LevelManager.main.path.Length)
             {
                 EnemySpawner.onEnemyDestroy.Invoke();
+                castle.gameObject.GetComponent<castleDoor>().Counter(increase);
                 Destroy(gameObject);
                 return;
             }

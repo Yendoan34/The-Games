@@ -4100,7 +4100,7 @@ GameObject:
   - component: {fileID: 1289226408}
   - component: {fileID: 1289226407}
   m_Layer: 0
-  m_Name: castleDoor
+  m_Name: Castle Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4151,7 +4151,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.0062396526, y: 0.24960148}
+  m_Offset: {x: 0.0062396526, y: 0.11393039}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -4162,7 +4162,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 2.160647, y: 0.50079703}
+  m_Size: {x: 2.160647, y: 0.7721392}
   m_EdgeRadius: 0
 --- !u!4 &1289226409
 Transform:

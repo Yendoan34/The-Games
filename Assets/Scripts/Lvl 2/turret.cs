@@ -45,6 +45,7 @@ public class turret : MonoBehaviour
 
     void Shoot()
     {
+        AudioManager.instance.PlaySound("Hit");
         GameObject bulletObj = Instantiate(bulletPrefab, firingPoint.position, Quaternion.identity);
         Bullet bulletScript = bulletObj.GetComponent<Bullet>();
         bulletScript.SetTarget(target);

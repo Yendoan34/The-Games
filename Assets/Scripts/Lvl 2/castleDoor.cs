@@ -1,16 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class castleDoor : MonoBehaviour
 {
     public int enemiesWin = 0;
 
-    void OnTriggerEnter2D(Collider2D  other)
+    void Update()
     {
-        if (other.tag == "Enemy")
+        if (enemiesWin == 5)
         {
-            enemiesWin++;
+            SceneManager.LoadScene(18);
         }
+    }
+
+    public void Counter(int increase)
+    {
+        enemiesWin = enemiesWin + increase;
     }
 }
