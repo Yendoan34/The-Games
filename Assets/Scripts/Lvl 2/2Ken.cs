@@ -30,8 +30,10 @@ public class SecondKen : MonoBehaviour
 
         foreach (GameObject enemy in enemies)
         {
-            enemy.gameObject.GetComponent<EnemyHealth2>().TakeDamage(KenDamage);
-            Destroy(enemy);
+            if (enemy.transform.parent == null || enemy.transform.parent.tag != "Enemy")
+            {
+                enemy.gameObject.GetComponent<EnemyHealth2>().TakeDamage(KenDamage);
+            }
         }
     }
 }

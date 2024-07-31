@@ -40,6 +40,6 @@ public class badEndingDialogue : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(16);
     }
 }

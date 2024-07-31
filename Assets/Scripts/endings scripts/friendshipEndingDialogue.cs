@@ -41,6 +41,6 @@ public class friendshipEndingDialogue : MonoBehaviour
 
     public void LoadScene()
     {
-        SceneManager.LoadScene(8);
+        SceneManager.LoadScene(16);
     }
 }

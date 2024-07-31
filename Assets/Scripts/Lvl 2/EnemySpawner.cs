@@ -54,7 +54,7 @@ public class EnemySpawner : MonoBehaviour
 
         if (currentWave >= 3 && enemiesAlive == 0)
         {
-            SceneManager.LoadScene(7);
+            SceneManager.LoadScene(5);
         }
     }
 

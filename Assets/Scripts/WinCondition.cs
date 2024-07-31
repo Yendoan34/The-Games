@@ -11,7 +11,7 @@ public class WinCondition : MonoBehaviour
     void Start()
     {
         starAmount = PlayerPrefs.GetInt("Score", 0);
-        if ( starAmount > 10 )
+        if ( starAmount > 20 )
         {
             Next1button.SetActive(true);
         }
