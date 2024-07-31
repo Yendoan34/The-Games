@@ -33,7 +33,7 @@ public class friendshipEndingDialogue : MonoBehaviour
         {
             teddy.SetTrigger("Teddy Talking");
         }
-        else
+        else if (currentIndex == 3)
         {
             LoadScene();
         }

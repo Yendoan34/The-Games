@@ -4,8 +4,15 @@ using UnityEngine;
 
 public class EnemyHealth2 : MonoBehaviour
 {
-    [SerializeField] int hitPoints = 2;
+    [SerializeField] public int hitPoints = 2;
     [SerializeField] int currencyWorth = 1;
+
+    public int maxHP;
+
+    void Start()
+    {
+        maxHP = hitPoints;
+    }
 
     bool isDestroyed = false;
 

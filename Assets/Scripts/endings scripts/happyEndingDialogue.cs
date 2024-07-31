@@ -28,12 +28,16 @@ public class happyEndingDialogue : MonoBehaviour
             // Enable the next object
             objectsToToggle[currentIndex].SetActive(true);
         }
-        
-        if (currentIndex == 2)
+
+        if (currentIndex == 1)
+        {
+            barbie.SetTrigger("Talk");
+        }
+        else if (currentIndex == 2)
         {
             teddy.SetTrigger("Teddy Talking");
         }
-        else
+        else if (currentIndex == 3)
         {
             LoadScene();
         }

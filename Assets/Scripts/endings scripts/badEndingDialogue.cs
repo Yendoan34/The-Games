@@ -32,7 +32,7 @@ public class badEndingDialogue : MonoBehaviour
         {
             teddy.SetTrigger("Teddy Talking");
         }
-        else
+        else if (currentIndex == 2)
         {
             LoadScene();
         }

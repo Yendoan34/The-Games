@@ -632,7 +632,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -84.22978, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -2165,7 +2165,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -215.15002, y: 2.9}
+  m_AnchoredPosition: {x: 183.8, y: 2.9}
   m_SizeDelta: {x: 303.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1235114026 stripped
@@ -2494,6 +2494,7 @@ MonoBehaviour:
   - {fileID: 1131505543}
   - {fileID: 1222758345}
   - {fileID: 557397403}
+  - {fileID: 2100661227}
   - {fileID: 2100661227}
   barbie: {fileID: 1235114027}
   ken: {fileID: 101681191}
@@ -3104,7 +3105,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -268.82092, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -3134,7 +3135,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 218.8, y: 2.9}
+  m_AnchoredPosition: {x: -255, y: 2.9}
   m_SizeDelta: {x: 229.9, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1660057539 &9223372036854775807

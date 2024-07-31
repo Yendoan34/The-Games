@@ -41,7 +41,7 @@ public class goodEndingDialogue : MonoBehaviour
         {
             barbie.SetTrigger("Talk");
         }
-        else
+        else if (currentIndex == 5)
         {
             LoadScene();
         }
