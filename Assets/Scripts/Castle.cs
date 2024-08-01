@@ -6,7 +6,6 @@ public class Castle : MonoBehaviour
 {
     private float enemies = 0;
     public int maxEnemy = 8;
-    public GameObject barbie;
     public GameObject fail;
     private CountEnemy passed;
     // Start is called before the first frame update
@@ -20,7 +19,6 @@ public class Castle : MonoBehaviour
     {
         if (enemies == maxEnemy)
         {
-            barbie.SetActive(false);
             fail.SetActive(true);
 
         }

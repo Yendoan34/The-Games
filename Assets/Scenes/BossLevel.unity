@@ -1554,7 +1554,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxEnemy: 16
-  barbie: {fileID: 167308753}
   fail: {fileID: 638875625}
 --- !u!1 &311315140
 GameObject:
@@ -4429,7 +4428,6 @@ MonoBehaviour:
   spawnRate: 4
   maxEnemies: 16
   nextButton: {fileID: 1775918748}
-  barbie: {fileID: 167308753}
   fail: {fileID: 638875625}
   passAmount: 5
 --- !u!1 &721563954

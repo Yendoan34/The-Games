@@ -6,8 +6,10 @@ public class Ken : MonoBehaviour
 {
     private float elapsedTime = 0f;
     public GameObject star;
+    private CountEnemy passed;
     void Start()
     {
+        passed = GameObject.Find("Manager").GetComponent<CountEnemy>();
         AudioManager.instance.PlaySound("Magic");
         DestroyAllEnemies();
     }
@@ -26,17 +28,15 @@ public class Ken : MonoBehaviour
     void DestroyAllEnemies()
     {
         // Find all game objects with the tag "Enemy"
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("Enemy");
+        EnemyHealth[] enemies = GameObject.FindObjectsOfType<EnemyHealth>();
 
         // Destroy each enemy game object
-        foreach (GameObject enemy in enemies)
+        foreach (EnemyHealth enemy in enemies)
         {
-            // Check if the enemy is the root object or its parent does not have the "Enemy" tag
-            if (enemy.transform.parent == null || enemy.transform.parent.tag != "Enemy")
-            {
-                GameObject point = Instantiate(star, enemy.transform.position, Quaternion.identity);
-                Destroy(enemy);
-            }
+            passed.dieEnemy++;
+            GameObject point = Instantiate(star, enemy.transform.position, Quaternion.identity);
+            Destroy(enemy.transform.parent.gameObject);
+            
         }
     }
 }

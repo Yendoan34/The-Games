@@ -25,7 +25,7 @@ public class GuideStar : MonoBehaviour
 
             // Find the closest target to the mouse position
             float distance = Vector3.Distance(mousePosition, transform.position);
-            if (distance <= 0.1f)
+            if (distance <= 0.3f)
             {
                 Point();
             }

@@ -9,7 +9,6 @@ public class Level1 : MonoBehaviour
     public float spawnRate = 4f; // Rate at which enemies will spawn
     public int maxEnemies = 8; // Maximum number of enemies to spawn
     public GameObject nextButton;
-    public GameObject barbie;
     public GameObject fail;
     private bool stop = false;
     private GameObject[] enemies;
@@ -49,7 +48,6 @@ public class Level1 : MonoBehaviour
                 }
                 else if (!appearedbutton)
                 {
-                    barbie.SetActive(false);
                     fail.SetActive(true);
                     appearedbutton = true;
                 }
