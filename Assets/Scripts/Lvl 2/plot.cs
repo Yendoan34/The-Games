@@ -33,7 +33,7 @@ public class plot : MonoBehaviour
 
         if (towerToBuild.cost > LevelManager.main.currency)
         {
-            AudioManager.instance.PlaySound("Click");
+            AudioManager.instance.PlaySound("Error");
             Debug.Log("can't afford a gun");
             return;
         }

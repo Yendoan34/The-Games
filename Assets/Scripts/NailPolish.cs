@@ -12,6 +12,7 @@ public class NailPolish : MonoBehaviour
     private Vector3 targetPosition;
     private float moveTimer = 0.0f;
     private float moveDuration = 0.8f; // Duration for moving the enemy
+    private bool sound = false;
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.CompareTag("Enemy"))
@@ -23,7 +24,11 @@ public class NailPolish : MonoBehaviour
                 if (enemyTransform != null)
                 {
                     Debug.Log("Enemy hit");
-                    AudioManager.instance.PlaySound("Nail Polish");
+                    if (!sound)
+                    {
+                        AudioManager.instance.PlaySound("Nail Polish");
+                        sound = true;
+                    }
                     enemyHit = true; // Set the flag to true
                     originalPosition = enemyTransform.position; // Save the original position
                     targetPosition = originalPosition + new Vector3(moveDistance, 0, 0); // Calculate the target position

@@ -54,9 +54,10 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 5b034477ca51c9145bf5ac1196d09b62, type: 3}
   - {fileID: 8300000, guid: 6ab8b735dc1d12e439fce56ccf154261, type: 3}
   - {fileID: 8300000, guid: 7b8b63a82efcba149b460acff3ad3ef9, type: 3}
-  - {fileID: 8300000, guid: d128800d7db096046910f9aadf85f888, type: 3}
+  - {fileID: 8300000, guid: a82a821a532a2774bb942076fbe3bc12, type: 3}
   - {fileID: 8300000, guid: 01e5e463ab75a844ebf53b72de969cf4, type: 3}
   - {fileID: 8300000, guid: e1ce6aaa4be84134e877c9bbfb437483, type: 3}
+  - {fileID: 8300000, guid: cf90e38ba81182a48a39fb8d862afaf4, type: 3}
   soundNames:
   - Hit
   - Collect
@@ -70,6 +71,7 @@ MonoBehaviour:
   - Hair Dryer
   - Nail Polish
   - Hair Roll
+  - Error
   musicTracks:
   - {fileID: 8300000, guid: 8fff40f80526c624292e03a8fd8d7884, type: 3}
   - {fileID: 8300000, guid: 44a851f2f0ec185438e172fb6b055d89, type: 3}
@@ -78,3 +80,5 @@ MonoBehaviour:
   - Danger
   - Romantic
   - Game
+  musicVolumeSlider: {fileID: 0}
+  soundVolumeSlider: {fileID: 0}

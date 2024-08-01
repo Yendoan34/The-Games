@@ -12,9 +12,9 @@ GameObject:
   - component: {fileID: 5546976389720432053}
   - component: {fileID: 897242722662325818}
   - component: {fileID: 4321824390140164317}
-  - component: {fileID: 3082754029060924172}
+  - component: {fileID: -6834868190617691637}
   m_Layer: 0
-  m_Name: Nail Polish
+  m_Name: GuideRoll
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -5.99, y: -2.58, z: 0}
-  m_LocalScale: {x: 0.08, y: 0.08, z: 0.08}
+  m_LocalScale: {x: 0.1, y: 0.1, z: 0.1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
@@ -75,8 +75,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 401b8958e29211f4098f5c5b967cebdd, type: 3}
+  m_SortingOrder: 20
+  m_Sprite: {fileID: 21300000, guid: 5b5b4a922a619ae439da7acd72ecafbb, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -116,7 +116,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
@@ -134,7 +134,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 50
   m_LinearDrag: 0
   m_AngularDrag: 0.05
   m_GravityScale: 0
@@ -149,7 +149,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &3082754029060924172
+--- !u!114 &-6834868190617691637
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -158,6 +158,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 5577372275933560399}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b81e4ebc7790fff46afced104395c449, type: 3}
+  m_Script: {fileID: 11500000, guid: f40bb20c9f09c324690b8f441996c02f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  body: {fileID: 4321824390140164317}
+  speed: 2
+  star: {fileID: 3926248700067330148, guid: ee4dfa5ab23901f409de443105e66173, type: 3}

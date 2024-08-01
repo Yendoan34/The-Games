@@ -86,7 +86,11 @@ public class Player : MonoBehaviour
         {
             rb.isKinematic = true;
         }
-
+        Collider2D collider = projectile.GetComponent<Collider2D>();
+        if (collider != null)
+        {
+            collider.enabled = false;
+        }
         while (Vector3.Distance(projectile.transform.position, targetPosition) > 0.1f)
         {
             // Calculate the step size based on shootSpeed and deltaTime
@@ -110,6 +114,11 @@ public class Player : MonoBehaviour
         if (rb != null)
         {
             rb.isKinematic = false;
+        }
+        // Enable the collider
+        if (collider != null)
+        {
+            collider.enabled = true;
         }
     }
 

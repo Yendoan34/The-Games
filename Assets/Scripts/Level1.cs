@@ -40,7 +40,7 @@ public class Level1 : MonoBehaviour
                 nextButton.SetActive(true);
                 appearedbutton = true;
             }
-            if ((passed.passEnemy + passed.dieEnemy) == maxEnemies)
+            if ((passed.passEnemy + passed.dieEnemy) >= maxEnemies)
             {
                 if (CountAliveEnemies() <= passAmount && !appearedbutton)
                 {
@@ -51,6 +51,7 @@ public class Level1 : MonoBehaviour
                 {
                     barbie.SetActive(false);
                     fail.SetActive(true);
+                    appearedbutton = true;
                 }
             }
         }

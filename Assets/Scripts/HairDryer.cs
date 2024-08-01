@@ -8,6 +8,7 @@ public class HairDryer : MonoBehaviour
     public float rayDistance = 10f; // Set the distance for the raycast
     private float thrust = 0.005f;
     private float timer = 0.0f;
+    private bool sound = false;
     // Start is called before the first frame update
     void Start()
     {
@@ -24,7 +25,11 @@ public class HairDryer : MonoBehaviour
             if (enemy != null)
             {
                 Debug.Log("Enemy hit");
-                AudioManager.instance.PlaySound("Hair Dryer");
+                if (!sound)
+                {
+                    AudioManager.instance.PlaySound("Hair Dryer");
+                    sound = true;
+                }
 
                 // Apply push to the enemy
                 enemy.ApplyPush(Vector3.right, thrust, 4f);
